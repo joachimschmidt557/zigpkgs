@@ -18,6 +18,10 @@
           zig = zig-nightly.defaultPackage."x86_64-linux";
         };
 
+        vpkz = pkgs.callPackage ./pkgs/vpkz {
+          zig = zig-nightly.defaultPackage."x86_64-linux";
+        };
+
       };
 
   };
