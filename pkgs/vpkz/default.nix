@@ -1,10 +1,10 @@
 { lib
 , stdenv
 , fetchFromGitHub
-, zig
+, buildZigProject
 }:
 
-stdenv.mkDerivation rec {
+buildZigProject rec {
   pname = "vpkz";
   version = "unstable-2021-09-10";
 
@@ -15,19 +15,10 @@ stdenv.mkDerivation rec {
     sha256 = "gppaifGlHibBxdrpsCNqc17p97OlJ/rQ5Chno9dsGV0=";
   };
 
-  nativeBuildInputs = [ zig ];
-
-  dontConfigure = true;
-
-  preBuild = ''
-    export HOME=$TMPDIR
-  '';
-
-  installPhase = ''
-    runHook preInstall
-    zig build -Drelease-safe -Dcpu=baseline --prefix $out install
-    runHook postInstall
-  '';
+  options = [
+    "-Drelease-safe"
+    "-Dcpu=baseline"
+  ];
 
   meta = with lib; {
     homepage = "https://github.com/joachimschmidt557/vpkz";
