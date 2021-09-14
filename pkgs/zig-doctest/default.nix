@@ -1,10 +1,10 @@
 { lib
 , stdenv
 , fetchFromGitHub
-, zig
+, buildZigProject
 }:
 
-stdenv.mkDerivation rec {
+buildZigProject rec {
   pname = "zig-doctest";
   version = "unstable-2021-09-02";
 
@@ -15,19 +15,10 @@ stdenv.mkDerivation rec {
     sha256 = "D64XvYt3teS2Vi2ijIoDFYQjsDWRZZUM0Mir2+SyU5Y=";
   };
 
-  nativeBuildInputs = [ zig ];
-
-  dontConfigure = true;
-
-  preBuild = ''
-    export HOME=$TMPDIR
-  '';
-
-  installPhase = ''
-    runHook preInstall
-    zig build -Drelease-safe -Dcpu=baseline --prefix $out install
-    runHook postInstall
-  '';
+  options = [
+    "-Drelease-safe"
+    "-Dcpu=baseline"
+  ];
 
   meta = with lib; {
     homepage = "https://github.com/kristoff-it/zig-doctest";

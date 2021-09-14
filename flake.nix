@@ -9,20 +9,25 @@
     packages.x86_64-linux =
       let
         pkgs = import nixpkgs { system = "x86_64-linux"; };
+        buildZig081Project = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
+          zig = pkgs.zig;
+        };
         buildZigNightlyProject = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
           zig = zig-nightly.defaultPackage."x86_64-linux";
         };
       in
       {
 
-        river = pkgs.callPackage ./pkgs/river { };
+        river = pkgs.callPackage ./pkgs/river {
+          buildZigProject = buildZig081Project;
+        };
 
         vpkz = pkgs.callPackage ./pkgs/vpkz {
           buildZigProject = buildZigNightlyProject;
         };
 
         zig-doctest = pkgs.callPackage ./pkgs/zig-doctest {
-          zig = zig-nightly.defaultPackage."x86_64-linux";
+          buildZigProject = buildZigNightlyProject;
         };
 
       };

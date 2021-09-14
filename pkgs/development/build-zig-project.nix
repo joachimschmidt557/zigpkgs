@@ -1,7 +1,7 @@
 { lib, stdenv, zig }:
 
 {
-  step ? "install"
+  steps ? [ "install" ]
 , options ? [ "-Dcpu=baseline" ]
 , nativeBuildInputs ? []
 , ...
@@ -18,7 +18,7 @@ stdenv.mkDerivation (args // {
 
   installPhase = ''
     runHook preInstall
-    zig build ${lib.concatStringsSep " " options} --prefix $out ${step}
+    zig build ${lib.concatStringsSep " " options} --prefix $out ${lib.concatStringsSep " " steps}
     runHook postInstall
   '';
 })

@@ -1,7 +1,7 @@
 { lib
 , stdenv
 , fetchFromGitHub
-, zig
+, buildZigProject
 , wayland
 , pkg-config
 , scdoc
@@ -17,7 +17,7 @@
 , libGL
 }:
 
-stdenv.mkDerivation rec {
+buildZigProject rec {
   pname = "river";
   version = "unstable-2021-08-03";
 
@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
     fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [ zig wayland xwayland scdoc pkg-config ];
+  nativeBuildInputs = [ wayland xwayland scdoc pkg-config ];
 
   buildInputs = [
     wayland-protocols
@@ -44,17 +44,12 @@ stdenv.mkDerivation rec {
     libGL
   ];
 
-  dontConfigure = true;
-
-  preBuild = ''
-    export HOME=$TMPDIR
-  '';
-
-  installPhase = ''
-    runHook preInstall
-    zig build -Drelease-safe -Dcpu=baseline -Dxwayland -Dman-pages --prefix $out install
-    runHook postInstall
-  '';
+  options = [
+    "-Drelease-safe"
+    "-Dcpu=baseline"
+    "-Dxwayland"
+    "-Dman-pages"
+  ];
 
   /*
     Builder patch install dir into river to get default config
