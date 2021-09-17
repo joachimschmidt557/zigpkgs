@@ -27,6 +27,10 @@
         in
         {
 
+          gyro = pkgs.callPackage ./pkgs/gyro {
+            buildZigProject = buildZigNightlyProject;
+          };
+
           river = pkgs.callPackage ./pkgs/river {
             buildZigProject = buildZig081Project;
           };
