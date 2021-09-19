@@ -1,9 +1,10 @@
 { lib, stdenv, zig }:
 
-{
-  steps ? [ "install" ]
+{ buildFile ? "build.zig"
+, steps ? [ "install" ]
+  # , zigLibDir ? "${zig}/lib/zig" # 0.8.1 doesn't support this
 , options ? [ "-Dcpu=baseline" ]
-, nativeBuildInputs ? []
+, nativeBuildInputs ? [ ]
 , ...
 }@args:
 
@@ -12,13 +13,14 @@ stdenv.mkDerivation (args // {
 
   dontConfigure = true;
 
-  preBuild = ''
-    export HOME=$TMPDIR
-  '';
-
   installPhase = ''
     runHook preInstall
-    zig build ${lib.concatStringsSep " " options} --prefix $out ${lib.concatStringsSep " " steps}
+    zig build \
+      --global-cache-dir $TMPDIR/zig-cache \
+      --build-file ${buildFile} \
+      ${lib.concatStringsSep " " options} \
+      --prefix $out \
+      ${lib.concatStringsSep " " steps}
     runHook postInstall
   '';
 })
