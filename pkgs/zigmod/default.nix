@@ -10,8 +10,8 @@ let
   src = fetchFromGitHub {
     owner = "nektro";
     repo = "zigmod";
-    rev = "88305122a91b853fc753fc05234b7f695e6ebe8c";
-    sha256 = "S0od1RV4LybZmRyT9bWU9gMYsn3Qonf6lhCiBceSW0U=";
+    rev = "3f37f7d5d23b5df6f8f501047b02f6a6ebdae637";
+    sha256 = "Su73q2sJqcyy57k0Z4KzU0JUOYaZhJfvONKhUqTaWiQ=";
     fetchSubmodules = true;
   };
   version = "77";
