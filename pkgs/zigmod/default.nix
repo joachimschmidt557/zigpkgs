@@ -10,11 +10,11 @@ let
   src = fetchFromGitHub {
     owner = "nektro";
     repo = "zigmod";
-    rev = "3f37f7d5d23b5df6f8f501047b02f6a6ebdae637";
-    sha256 = "Su73q2sJqcyy57k0Z4KzU0JUOYaZhJfvONKhUqTaWiQ=";
+    rev = "6abac9b3f41b9e3490023d232a57548a71183c9c";
+    sha256 = "X0sXER+5BpHhqoQ/5xLB51eS2IOCMvwC9c+9z4D9BQA=";
     fetchSubmodules = true;
   };
-  version = "77";
+  version = "81";
   zigmodBootstrap = import ./bootstrap.nix {
     inherit src version fetchFromGitHub buildZigProject;
   };
@@ -72,5 +72,6 @@ in buildZigProject {
     license = licenses.mit;
     platforms = platforms.all;
     maintainers = with maintainers; [ joachimschmidt557 ];
+    broken = true;
   };
 }
