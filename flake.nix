@@ -29,6 +29,10 @@
           in
           {
 
+            brightnessztl = pkgs.callPackage ./pkgs/brightnessztl {
+              buildZigProject = buildZigNightlyProject;
+            };
+
             gyro = pkgs.callPackage ./pkgs/gyro {
               buildZigProject = buildZigNightlyProject;
             };
