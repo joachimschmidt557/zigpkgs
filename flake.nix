@@ -49,6 +49,10 @@
               buildZigProject = buildZigNightlyProject;
             };
 
+            zigfd = pkgs.callPackage ./pkgs/zigfd {
+              buildZigProject = buildZigNightlyProject;
+            };
+
             zigmod = pkgs.callPackage ./pkgs/zigmod {
               buildZigProject = buildZigNightlyProject;
             };
