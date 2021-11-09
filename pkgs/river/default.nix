@@ -19,13 +19,13 @@
 
 buildZigProject rec {
   pname = "river";
-  version = "unstable-2021-10-20";
+  version = "0.1.0";
 
   src = fetchFromGitHub {
     owner = "ifreund";
     repo = pname;
-    rev = "e447e1b41fbb4fa210e0a2cf8ecb1e3ac932ab32";
-    sha256 = "TWUWlXKKB4W04CM7BWWYsgxYVh7mOyfNXCfHpr+jQD0=";
+    rev = "v${version}";
+    sha256 = "03pdgrcpj8db9s14249815z76dyjwwma8xv6p9hpw79flk6rk7v7";
     fetchSubmodules = true;
   };
 
