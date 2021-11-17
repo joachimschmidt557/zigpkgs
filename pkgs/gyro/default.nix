@@ -6,13 +6,13 @@
 
 buildZigProject rec {
   pname = "gyro";
-  version = "unstable-2021-10-17";
+  version = "unstable-2021-11-15";
 
   src = fetchFromGitHub {
     owner = "mattnite";
     repo = pname;
-    rev = "4b79a195f9b043e65a8d884245e3c53fb2547a29";
-    sha256 = "m9ZZfHpvOs3XFIroJMAVldPXQ7/K6abQkGjBiNvh4Tk=";
+    rev = "54af3ee9d9360f20aeb25f09c1c72ad31b6f6f9f";
+    sha256 = "1+YBQ23ngLOks1Vv80SnAmz70x6BN4vIT5Gttqv0eJM=";
     fetchSubmodules = true;
   };
 

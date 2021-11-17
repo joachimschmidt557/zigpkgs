@@ -6,13 +6,13 @@
 
 buildZigProject rec {
   pname = "zig-doctest";
-  version = "unstable-2021-10-12";
+  version = "unstable-2021-10-29";
 
   src = fetchFromGitHub {
     owner = "kristoff-it";
     repo = pname;
-    rev = "17c230224af13abc8e622435ab1348e270855551";
-    sha256 = "8IXPovnCbcJBV+JVJPPphuZG0rwusuFk46W/hJ1OXEk=";
+    rev = "db032a30e8241751efaf2d0cbf1d92c6aa101c76";
+    sha256 = "JO7iN3+pctBTVWE2y8ytnTo7ddqpJa0GeYqGvMV0gB8=";
   };
 
   options = [
