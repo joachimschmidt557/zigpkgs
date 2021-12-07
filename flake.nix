@@ -2,6 +2,7 @@
   description = "A collection of Zig packages";
 
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.11";
     flake-utils.url = "github:numtide/flake-utils";
     zig-overlay.url = "github:arqv/zig-overlay";
     zig-nightly.url = "github:chivay/zig-nightly";
