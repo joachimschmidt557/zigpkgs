@@ -6,13 +6,13 @@
 
 buildZigProject rec {
   pname = "vpkz";
-  version = "unstable-2021-09-20";
+  version = "unstable-2021-12-19";
 
   src = fetchFromGitHub {
     owner = "joachimschmidt557";
     repo = pname;
-    rev = "7245c9d00d95d87517c364d180520f816f16090e";
-    sha256 = "ujt/DTUZvOPs2m/DjfTRpKIDsp9Id4qkPcbEDK95OgU=";
+    rev = "28beca6ba6502fd736f205bc190fdc3265a8f9e4";
+    sha256 = "V+1d8MzyZVJD1FclVbFPka8vZ7PYuMAVZTp36cHrvqs=";
   };
 
   options = [
@@ -26,6 +26,5 @@ buildZigProject rec {
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
