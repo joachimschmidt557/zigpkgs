@@ -6,13 +6,13 @@
 
 buildZigProject rec {
   pname = "zig-doctest";
-  version = "unstable-2021-10-29";
+  version = "unstable-2021-12-05";
 
   src = fetchFromGitHub {
     owner = "kristoff-it";
     repo = pname;
-    rev = "db032a30e8241751efaf2d0cbf1d92c6aa101c76";
-    sha256 = "JO7iN3+pctBTVWE2y8ytnTo7ddqpJa0GeYqGvMV0gB8=";
+    rev = "964f997fc5170370c4be121b30d08d898498c9c7";
+    sha256 = "NZnBamu0QRgW0jV5zXTCTD0fnQz+SpNfAiXEJJOcINM=";
   };
 
   options = [
@@ -26,6 +26,5 @@ buildZigProject rec {
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
