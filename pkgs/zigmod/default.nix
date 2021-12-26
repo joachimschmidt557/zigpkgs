@@ -10,11 +10,11 @@ let
   src = fetchFromGitHub {
     owner = "nektro";
     repo = "zigmod";
-    rev = "bea44ffb826b52ff37c290a004536b85157887ba";
-    sha256 = "XEYFiznq+TFGVIKxhmkR2/OZIjYf9pRvPDV2x8Z832w=";
+    rev = "58ea4175f98b725c22eac691a41c0b03f9dcdebb";
+    sha256 = "TexPbIn+QJc6LVW/32KShRliPkN0IDtIoJguTb7f4uA=";
     fetchSubmodules = true;
   };
-  version = "85";
+  version = "89";
   zigmodBootstrap = import ./bootstrap.nix {
     inherit src version fetchFromGitHub buildZigProject;
   };
@@ -46,7 +46,7 @@ let
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "vjiofBio4cuFfVAWTcI2loAuhjjz0+d2+L8jIkjkKOw=";
+    outputHash = "8r7jmawTlQScVVCXxxM37UpERsTvLgzarZL6/NNdiWI=";
 
     dontFixup = true;
   };
@@ -72,6 +72,5 @@ in buildZigProject {
     license = licenses.mit;
     platforms = platforms.all;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
