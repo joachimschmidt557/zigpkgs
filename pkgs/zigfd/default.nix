@@ -4,15 +4,15 @@
 , buildZigProject
 }:
 
-buildZigProject rec {
+buildZigProject {
   pname = "zigfd";
-  version = "unstable-2021-10-25";
+  version = "unstable-2022-01-02";
 
   src = fetchFromGitHub {
     owner = "joachimschmidt557";
-    repo = pname;
-    rev = "d396f9325ae5c6f66d95d62d56bd38a26cb80ebe";
-    sha256 = "Sz+FThBzzRk97ZsZNZBtGwf8D8nI3oijKMdqN4NE/RI=";
+    repo = "zigfd";
+    rev = "2834b335595b6a70bb2f6b0d3cf7a61f86571d1f";
+    sha256 = "tHwcJIPU1uf1bOslZbjTObxN1x9xlPqamtdwqNUb47g=";
     fetchSubmodules = true;
   };
 
@@ -27,6 +27,5 @@ buildZigProject rec {
     license = licenses.mit;
     platforms = platforms.all;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
