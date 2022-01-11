@@ -5,8 +5,8 @@
 }:
 
 buildZigProject {
-  pname = "gyro";
-  version = "unstable-2022-01-01";
+  pname = "gyro-unstable";
+  version = "2022-01-01";
 
   src = fetchFromGitHub {
     owner = "mattnite";

@@ -7,8 +7,8 @@
 }:
 
 buildZigProject rec {
-  pname = "brightnessztl";
-  version = "unstable-2021-12-26";
+  pname = "brightnessztl-unstable";
+  version = "2021-12-26";
 
   src = fetchFromGitHub {
     owner = "hspak";

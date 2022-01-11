@@ -5,8 +5,8 @@
 }:
 
 buildZigProject rec {
-  pname = "vpkz";
-  version = "unstable-2021-12-19";
+  pname = "vpkz-unstable";
+  version = "2021-12-19";
 
   src = fetchFromGitHub {
     owner = "joachimschmidt557";

@@ -5,8 +5,8 @@
 }:
 
 buildZigProject {
-  pname = "zigfd";
-  version = "unstable-2022-01-02";
+  pname = "zigfd-unstable";
+  version = "2022-01-02";
 
   src = fetchFromGitHub {
     owner = "joachimschmidt557";

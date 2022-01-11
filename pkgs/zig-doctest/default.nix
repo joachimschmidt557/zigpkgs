@@ -5,8 +5,8 @@
 }:
 
 buildZigProject rec {
-  pname = "zig-doctest";
-  version = "unstable-2021-12-05";
+  pname = "zig-doctest-unstable";
+  version = "2021-12-05";
 
   src = fetchFromGitHub {
     owner = "kristoff-it";
