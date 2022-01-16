@@ -21,7 +21,7 @@
         packages =
           let
             pkgs = nixpkgs.legacyPackages.${system};
-            buildZig081Project = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
+            buildZig090Project = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
               zig = pkgs.zig;
             };
             buildZigNightlyProject = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
@@ -36,10 +36,6 @@
 
             gyro = pkgs.callPackage ./pkgs/gyro {
               buildZigProject = buildZigNightlyProject;
-            };
-
-            river = pkgs.callPackage ./pkgs/river {
-              buildZigProject = buildZig081Project;
             };
 
             vpkz = pkgs.callPackage ./pkgs/vpkz {
