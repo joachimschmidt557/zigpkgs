@@ -30,6 +30,10 @@
           in
           {
 
+            aro = pkgs.callPackage ./pkgs/aro {
+              buildZigProject = buildZigNightlyProject;
+            };
+
             bork = pkgs.callPackage ./pkgs/bork {
               buildZigProject = buildZig090Project;
             };
