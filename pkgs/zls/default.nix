@@ -6,13 +6,13 @@
 
 buildZigProject {
   pname = "zls-unstable";
-  version = "2022-01-12";
+  version = "2022-02-03";
 
   src = fetchFromGitHub {
     owner = "zigtools";
     repo = "zls";
-    rev = "fefabc658fd0f14eb0f3cf637805ad51efc5f052";
-    sha256 = "O4yBj9QsE0MgzimlYQ+3Af2bh7SGWST4XniJ8qXqmpA=";
+    rev = "f3aabd6b7ca424b6aa1be9ef8a215a842301b994";
+    sha256 = "y3qu91itvO4AeZTDQooKt5QGS2czpFhDR8A6w2BEXdM=";
     fetchSubmodules = true;
   };
 
@@ -27,6 +27,5 @@ buildZigProject {
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
