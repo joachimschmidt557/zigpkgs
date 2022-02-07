@@ -8,13 +8,13 @@
 
 buildZigProject rec {
   pname = "brightnessztl-unstable";
-  version = "2021-12-26";
+  version = "2022-02-01";
 
   src = fetchFromGitHub {
     owner = "hspak";
     repo = "brightnessztl";
-    rev = "68ed8a49f83110a59aef4c8c4ca57b716685c6a5";
-    sha256 = "A9wPGY60qS5vFZ1KPK2EWTYiBDQY/KlELD12CLOP8ks=";
+    rev = "fd7ab31bfe8e06f112061427bb14bf06ccfb5869";
+    sha256 = "teri9WYSHNDaHquBwipGKFey8bbpJt4e/e199Q+uUjI=";
   };
 
   nativeBuildInputs = lib.optional logindSupport pkg-config;
@@ -33,6 +33,5 @@ buildZigProject rec {
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
