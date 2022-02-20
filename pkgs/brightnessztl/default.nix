@@ -8,13 +8,13 @@
 
 buildZigProject rec {
   pname = "brightnessztl-unstable";
-  version = "2022-02-01";
+  version = "2022-02-17";
 
   src = fetchFromGitHub {
     owner = "hspak";
     repo = "brightnessztl";
-    rev = "fd7ab31bfe8e06f112061427bb14bf06ccfb5869";
-    sha256 = "teri9WYSHNDaHquBwipGKFey8bbpJt4e/e199Q+uUjI=";
+    rev = "37ba094993176177de0b17e868c430afcd4dc940";
+    sha256 = "Zm76FUORCfgHQUDpEZ7Q0PLV1GoRu03Uj72EWEruALU=";
   };
 
   nativeBuildInputs = lib.optional logindSupport pkg-config;
