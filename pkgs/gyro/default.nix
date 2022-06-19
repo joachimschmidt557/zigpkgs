@@ -6,13 +6,13 @@
 
 buildZigProject {
   pname = "gyro-unstable";
-  version = "2022-02-03";
+  version = "2022-06-05";
 
   src = fetchFromGitHub {
     owner = "mattnite";
     repo = "gyro";
-    rev = "b3aa10462ccf073701023d74221e388d33b70820";
-    sha256 = "S0M2NwELnjBLqTlnJDfXGmzDv3KoswnxXF0j/HaISh4=";
+    rev = "c8d002b6decad7fa6917b8c9952cdddc2b0f2197";
+    sha256 = "qQoBUmbH05y1fVKEagJqG/cBN/jGBIiZAQNW6vgi9tA=";
     fetchSubmodules = true;
   };
 
@@ -31,6 +31,5 @@ buildZigProject {
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
