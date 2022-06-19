@@ -31,5 +31,6 @@ buildZigProject {
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ joachimschmidt557 ];
+    broken = true;
   };
 }
