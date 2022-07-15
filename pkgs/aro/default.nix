@@ -6,13 +6,13 @@
 
 buildZigProject rec {
   pname = "aro-unstable";
-  version = "2022-01-18";
+  version = "2022-07-09";
 
   src = fetchFromGitHub {
     owner = "Vexu";
     repo = "arocc";
-    rev = "6b5184a77c10ab3888f76f79fe5653140987d02a";
-    sha256 = "wKR002fPQAL1hPRHdflPPnUUms/LopOLN5TQ0+zymDw=";
+    rev = "23133aed979e69148b487138e2638e7f76ded3c4";
+    sha256 = "maACbGWEzC/b90/TQ7PTXaH6+e/iXdFlpME7GCSxAp0=";
   };
 
   options = [
@@ -30,6 +30,5 @@ buildZigProject rec {
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
