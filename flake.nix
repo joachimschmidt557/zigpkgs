@@ -21,8 +21,11 @@
         packages =
           let
             pkgs = nixpkgs.legacyPackages.${system};
-            buildZig090Project = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
-              zig = pkgs.zig;
+            buildZig_0_9_0_Project = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
+              zig = zig-overlay.packages.${system}."0.9.0";
+            };
+            buildZig_0_10_0_Project = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
+              zig = zig-overlay.packages.${system}."0.10.0";
             };
             buildZigNightlyProject = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
               zig = zig-nightly.defaultPackage.${system};
@@ -35,7 +38,7 @@
             };
 
             bork = pkgs.callPackage ./pkgs/bork {
-              buildZigProject = buildZig090Project;
+              buildZigProject = buildZig_0_9_0_Project;
             };
 
             brightnessztl = pkgs.callPackage ./pkgs/brightnessztl {
