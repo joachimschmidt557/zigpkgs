@@ -5,11 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     zig-overlay.url = "github:mitchellh/zig-overlay";
-    zig-nightly.url = "github:chivay/zig-nightly";
   };
 
   outputs =
-    { self, nixpkgs, flake-utils, zig-overlay, zig-nightly }:
+    { self, nixpkgs, flake-utils, zig-overlay }:
     let
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       hydraSystems = [ "x86_64-linux" ];
@@ -28,7 +27,7 @@
               zig = zig-overlay.packages.${system}."0.10.0";
             };
             buildZigNightlyProject = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
-              zig = zig-nightly.defaultPackage.${system};
+              zig = zig-overlay.packages.${system}.master;
             };
           in
           {

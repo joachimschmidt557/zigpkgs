@@ -17,21 +17,6 @@
     },
     "flake-utils_2": {
       "locked": {
-        "lastModified": 1631561581,
-        "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "7e5bf3925f6fbdfaf50a2a7ca0be2879c4261d19",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_3": {
-      "locked": {
         "lastModified": 1629481132,
         "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
         "owner": "numtide",
@@ -63,22 +48,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1657975505,
-        "narHash": "sha256-juMbw+GY2ycTrg3QbdFfEQs6P3FJeoYEv8aMVl2EZsg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "d6df226c53d46821bd4773bd7ec3375f30238edb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1631288242,
         "narHash": "sha256-sXm4KiKs7qSIf5oTAmrlsEvBW193sFj+tKYVirBaXz0=",
         "owner": "NixOS",
@@ -97,33 +66,13 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
-        "zig-nightly": "zig-nightly",
         "zig-overlay": "zig-overlay"
-      }
-    },
-    "zig-nightly": {
-      "inputs": {
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1659139304,
-        "narHash": "sha256-/4Ax53dCFD5C7ZSO7Ym7Ekr9G+mKPMdYKv4p2tZYs6Q=",
-        "owner": "chivay",
-        "repo": "zig-nightly",
-        "rev": "b3178b0bd1c8a0fb12043582dcf5db166e42d5ea",
-        "type": "github"
-      },
-      "original": {
-        "owner": "chivay",
-        "repo": "zig-nightly",
-        "type": "github"
       }
     },
     "zig-overlay": {
       "inputs": {
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_3"
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1666744216,
