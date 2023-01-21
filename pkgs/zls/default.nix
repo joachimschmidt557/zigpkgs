@@ -6,13 +6,13 @@
 
 buildZigProject {
   pname = "zls-unstable";
-  version = "2022-08-11";
+  version = "2023-01-20";
 
   src = fetchFromGitHub {
     owner = "zigtools";
     repo = "zls";
-    rev = "c632a7f29d67607c3c846a01d211a09c1f64d47c";
-    sha256 = "nE2zE2/WI8LQNB4030vu5YPEIgtJS198aD6dfreqnPs=";
+    rev = "1ed8d49b305a4ed03578eb251b18e5bd193ec04c";
+    sha256 = "MxTgzQE1UI2Bc1mSQGP/mxErqp7e0QU3lerp3KlCNJ0=";
     fetchSubmodules = true;
   };
 
@@ -23,10 +23,9 @@ buildZigProject {
 
   meta = with lib; {
     homepage = "https://github.com/zigtools/zls";
-    description = "Zig LSP implementation + Zig Language Server";
+    description = "The officially unofficial Zig language server";
     license = licenses.mit;
     platforms = platforms.linux;
     maintainers = with maintainers; [ joachimschmidt557 ];
-    broken = true;
   };
 }
