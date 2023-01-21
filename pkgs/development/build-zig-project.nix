@@ -2,7 +2,7 @@
 
 { buildFile ? "build.zig"
 , steps ? [ "install" ]
-  # , zigLibDir ? "${zig}/lib/zig" # 0.8.1 doesn't support this
+, zigLibDir ? "${zig}/lib"
 , options ? [ "-Dcpu=baseline" ]
 , nativeBuildInputs ? [ ]
 , ...
@@ -17,6 +17,7 @@ stdenv.mkDerivation (args // {
     runHook preInstall
     zig build \
       --global-cache-dir $TMPDIR/zig-cache \
+      --zig-lib-dir ${zigLibDir} \
       --build-file ${buildFile} \
       ${lib.concatStringsSep " " options} \
       --prefix $out \
