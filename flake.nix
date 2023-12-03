@@ -26,6 +26,9 @@
             buildZig_0_10_0_Project = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
               zig = zig-overlay.packages.${system}."0.10.0";
             };
+            buildZig_0_11_0_Project = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
+              zig = zig-overlay.packages.${system}."0.11.0";
+            };
             buildZigNightlyProject = pkgs.callPackage ./pkgs/development/build-zig-project.nix {
               zig = zig-overlay.packages.${system}.master;
             };
@@ -41,7 +44,7 @@
             };
 
             brightnessztl = pkgs.callPackage ./pkgs/brightnessztl {
-              buildZigProject = buildZigNightlyProject;
+              buildZigProject = buildZig_0_11_0_Project;
             };
 
             gyro = pkgs.callPackage ./pkgs/gyro {
