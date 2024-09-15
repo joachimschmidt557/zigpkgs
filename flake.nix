@@ -47,10 +47,6 @@
               buildZigProject = buildZig_0_11_0_Project;
             };
 
-            gyro = pkgs.callPackage ./pkgs/gyro {
-              buildZigProject = buildZigNightlyProject;
-            };
-
             vpkz = pkgs.callPackage ./pkgs/vpkz {
               buildZigProject = buildZigNightlyProject;
             };
