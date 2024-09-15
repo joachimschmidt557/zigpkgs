@@ -63,10 +63,6 @@
               buildZigProject = buildZigNightlyProject;
             };
 
-            zls = pkgs.callPackage ./pkgs/zls {
-              buildZigProject = buildZigNightlyProject;
-            };
-
           };
 
       }
